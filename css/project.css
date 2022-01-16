@@ -45,6 +45,27 @@
   text-decoration: none;
   color: var(--color-menu-main-text);
 }
+/* Contact */
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem 0;
+  display: inline-block;
+}
+
+#contact-direction {
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+  /* right: -20%; */
+  font-style: italic;
+  font-size: 2.5vh;
+  /* -webkit-transform-origin: left top; */
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  white-space: nowrap;
+}
 
 /*photobanner*/
 
