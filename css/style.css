@@ -350,18 +350,22 @@ label {
   float: left;
 }
 .form-control {
-  background-color: transparent;
-  border: 0;
-  border-bottom: 1px solid black;
-
-  border-radius: 0;
+  background-color: #dbdbdb !important;
+  border: 0 !important;
+  border-bottom: 1px solid black !important;
+  border-radius: 0 !important;
+  outline: none;
 }
 #form_message {
-  border: 1px solid black;
   resize: none;
+  outline: none;
 }
 .section-contact-center {
-  padding: 2rem;
+  padding: 2rem !important;
+}
+
+.contact-form-email {
+  padding-bottom: 1rem;
 }
 
 /* MEDIA QUERIES */
@@ -433,6 +437,10 @@ label {
     white-space: nowrap;
   }
   .section-contact-center {
+    padding: 0;
+  }
+
+  .contact-form-email {
     padding: 0;
   }
 }
