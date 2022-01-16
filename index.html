@@ -108,7 +108,7 @@
               class="col-2 col-md-3 order-sm-last d-none d-md-block text-center"
             >
               <span id="menu-rights">
-                <i class="fa-solid fa-copyright"></i>
+                <i class="fas fa-registered"></i>
                 TrazaTierra
               </span>
             </div>
@@ -147,7 +147,7 @@
 
     <!-- Content -->
 
-    <div class="portfolio_content container-fluid h-100">
+    <div class="main-content container-fluid h-100">
       <div class="row h-100 flex-row flex-nowrap scrollx long_content">
         <!-- Home -->
         <div class="col-12 h-100 project d-table" id="section-home">
@@ -200,9 +200,19 @@
             class="project_title d-table-cell align-middle"
             id="project-container"
           >
-            <div class="row" style="padding: 2em">
-              <div class="col-3 d-none d-md-block"></div>
-              <div class="col-12 col-md-6">
+            <div class="row">
+              <div
+                class="col-3 d-none d-md-block"
+                style="position: relative; border: 1px solid red"
+              >
+                <div id="project-author-vertical">Arq Irving Martin</div>
+                <!-- square -->
+                <div id="project-square">
+                  <div class="" id="project-line"></div>
+                  <div class="" id="project-year-vertical">2020</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6" style="border: 1px solid red">
                 <div
                   class=""
                   style="background-color: coral; position: relative"
@@ -230,6 +240,100 @@
         <div class="col-12 h-100 project d-table" id="project4">
           <div class="project_title d-table-cell align-middle">
             <!-- image -->
+
+            <div class="row">
+              <div class="col-3 d-none d-md-block"></div>
+              <div class="col-12 col-md-6 section-contact-center">
+                <!-- Mail -->
+                <form
+                  id="contact-form"
+                  method="post"
+                  action="contact.php"
+                  role="form"
+                >
+                  <div class="messages"></div>
+
+                  <div class="controls">
+                    <div class="row">
+                      <div class="col-md-6" style="padding-bottom: 1rem">
+                        <div class="form-group">
+                          <label for="form_name">Nombre</label>
+                          <input
+                            id="form_name"
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            placeholder=""
+                            required="required"
+                            data-error="Firstname is required."
+                          />
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="form_email">Correo</label>
+                          <input
+                            id="form_email"
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder=""
+                            required="required"
+                            data-error="Valid email is required."
+                          />
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12" style="padding-bottom: 1rem">
+                        <div class="form-group">
+                          <label for="form_email">Asunto</label>
+                          <input
+                            id="form_email"
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder=""
+                            required="required"
+                            data-error="Valid email is required."
+                          />
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="form_message" style="padding-bottom: 1rem"
+                            >Mensaje</label
+                          >
+                          <textarea
+                            id="form_message"
+                            name="message"
+                            class="form-control"
+                            placeholder=""
+                            rows="6"
+                            required="required"
+                            data-error="Please, leave us a message."
+                          ></textarea>
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <input
+                          type="submit"
+                          class="btn btn-success btn-send"
+                          value="Enviar"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!--  -->
+            </div>
           </div>
         </div>
         <!--  -->
@@ -242,4 +346,3 @@
   <span class="close">&times;</span>
   <img class="modal-content" id="full-image" />
 </div>
-<style></style>

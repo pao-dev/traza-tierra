@@ -25,19 +25,19 @@ canvas {
   height: 100%;
 }
 
-.portfolio_content .scrollx {
+.main-content .scrollx {
   overflow-x: hidden;
 }
 
-.portfolio_content .project {
+.main-content .project {
   scroll-snap-align: start;
 }
-.portfolio_content .project_title {
+.main-content .project_title {
   display: block;
   margin: auto;
   text-align: center;
 }
-.portfolio_content .project_title h1 {
+.main-content .project_title h1 {
   font-size: 96px;
   line-height: 0.8;
 }
@@ -222,6 +222,40 @@ li a {
   font-family: CocogooseUltra;
 }
 
+#project-author-vertical {
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  font-style: italic;
+  font-size: 1.6vw;
+  /* -webkit-transform-origin: left top; */
+  -webkit-transform: rotate(-90deg) translateX(-100%);
+}
+
+#project-year-vertical {
+  font-style: italic;
+  font-size: 3vh;
+  margin-top: 2vw;
+  /* -webkit-transform-origin: left top; */
+  -webkit-transform: rotate(-90deg) translateX(-100%);
+}
+
+#project-square {
+  position: absolute;
+  top: 15%;
+  right: 35%;
+  background-color: var(--color-menu-main-text);
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+#project-line {
+  margin: auto;
+  background-color: var(--color-menu-main-text);
+  width: 1px;
+  height: 10vw;
+}
+
 #project-number {
   position: absolute;
   z-index: 999;
@@ -311,6 +345,25 @@ li a {
     width: 100%;
   }
 }
+/* Form */
+label {
+  float: left;
+}
+.form-control {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+
+  border-radius: 0;
+}
+#form_message {
+  border: 1px solid black;
+  resize: none;
+}
+.section-contact-center {
+  padding: 2rem;
+}
+
 /* MEDIA QUERIES */
 
 /* Horizontal */
@@ -378,6 +431,9 @@ li a {
 
     /* font-size: 4em; */
     white-space: nowrap;
+  }
+  .section-contact-center {
+    padding: 0;
   }
 }
 

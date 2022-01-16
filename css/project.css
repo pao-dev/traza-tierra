@@ -77,6 +77,8 @@
   height: 233px;
   /* margin: 0 1vw; */
   margin: 0 0.2vw;
+  user-select: none;
+  cursor: pointer;
 }
 /* 
 .logo-slider:after {
@@ -140,6 +142,9 @@
   height: 233px;
   /* margin: 0 1vw; */
   margin: 0 0.2vw;
+
+  user-select: none;
+  cursor: pointer;
 }
 
 /* .logo-slider-2:after {

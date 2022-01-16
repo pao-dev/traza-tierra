@@ -1,4 +1,4 @@
-$(".portfolio_content .project").on("wheel", function (e) {
+$(".main-content .project").on("wheel", function (e) {
   e.preventDefault();
   // atras
   if (e.originalEvent.wheelDelta >= 0 && $(this).prev()[0].id != "project4") {
