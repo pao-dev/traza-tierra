@@ -358,7 +358,6 @@ label {
 }
 #form_message {
   resize: none;
-  outline: none;
 }
 .section-contact-center {
   padding: 2rem !important;
@@ -366,6 +365,10 @@ label {
 
 .contact-form-email {
   padding-bottom: 1rem;
+}
+
+*:focus {
+  outline: none;
 }
 
 /* MEDIA QUERIES */
