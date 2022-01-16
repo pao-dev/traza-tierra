@@ -1,0 +1,27 @@
+:root {
+  --color-background-color: #e6e6e6;
+  --color-menu-main-text: #2e1a04;
+  --size-interface-top: 1.4rem;
+  --size-interface-left: 1.2rem;
+  --size-content-h3: 1.2rem;
+}
+
+@font-face {
+  font-family: CocogooseUltra;
+  src: url("../assets/fonts/Cocogoose Pro Ultralight-trial.ttf");
+}
+
+@font-face {
+  font-family: CocogoosePro;
+  src: url("../assets/fonts/Cocogoose Pro-trial.ttf");
+}
+
+@font-face {
+  font-family: Syncopate-Regular;
+  src: url("../assets/fonts/Syncopate-Regular.ttf");
+}
+
+@font-face {
+  font-family: Syncopate-Bold;
+  src: url("../assets/fonts/Syncopate-Bold.ttf");
+}
