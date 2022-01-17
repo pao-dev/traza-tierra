@@ -1,7 +1,9 @@
+var z = 0;
 $(".main-content .project").on("wheel", function (e) {
   e.preventDefault();
   // atras
   if (e.originalEvent.wheelDelta >= 0 && $(this).prev()[0].id != "project4") {
+    z = $(this).prev()[0].id;
     if ($(this).prev().length) {
       var prev = "#" + $(this).prev().attr("id");
       document.querySelector(prev).scrollIntoView({ behavior: "smooth" });
@@ -9,7 +11,8 @@ $(".main-content .project").on("wheel", function (e) {
     }
   } else {
     // adelante
-    console.log($(this).next());
+    // console.log($(this).next());
+    z = $(this).next()[0].id;
     if ($(this).next().length && $(this).next()[0].id != "project-casa-bahia") {
       var next = "#" + $(this).next().attr("id");
       document.querySelector(next).scrollIntoView({ behavior: "smooth" });
@@ -18,9 +21,9 @@ $(".main-content .project").on("wheel", function (e) {
   }
 });
 
-function draw() {
-  console.log(windowHeight);
-}
+$(window).resize(function () {
+  document.getElementById(z).scrollIntoView({});
+});
 
 const interfaceItems = [];
 const interfaceBottomSection = document.getElementById(
@@ -40,7 +43,6 @@ for (let i = 0; i < 4; ++i) {
 }
 
 function changeNav(item) {
-  console.log(item);
   switch (item) {
     case "#section-home":
       interfaceItems.forEach((value) => {
@@ -98,9 +100,16 @@ function interfaceLeft(section) {
 }
 
 let projectMainContainer = `
-<div class="row" style="padding: 2em">
-  <div class="col-3 d-none d-md-block"></div>
-  <div class="col-12 col-md-6">
+<div class="row">
+  <div class="col-3 d-none d-md-block" style="position: relative">
+    <div id="project-author-vertical">Arq Irving Martin</div>
+    <!-- square -->
+    <div id="project-square">
+      <div class="" id="project-line"></div>
+      <div class="" id="project-year-vertical">2020</div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 section-portfolio-center">
     <div
       class=""
       style="background-color: coral; position: relative"
@@ -222,11 +231,12 @@ const interfaceLeftNavigation = [
 ];
 
 interfaceLeftNavigation.forEach((interfaceItem) => {
-  console.log(interfaceItem);
   let _id = document.getElementById(interfaceItem.id);
   _id.addEventListener("click", (event) => {
-    console.log("aa");
     event.preventDefault();
+    // mandar seccion
+    z = interfaceItem.destination;
+    console.log("zz", z);
 
     // // Resect select class
     // interfaceItems.forEach((value) => {

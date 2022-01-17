@@ -1,97 +1,62 @@
+const cursor = {
+  img: undefined, // Imagen del cursor (no alterar)
+  imgPath: "assets/img/arrow.png", // Enlace de la imagen del cursor
+  color: undefined, // Color de las lineas (no alterar)
+  colorValue: "255, 255, 255", // Color RBG de las lineas
+  alpha: 0.2, // Opacidad de las lineas
+  weight: 2, // Grosor de las lineas
+};
+
+function preload() {
+  cursor.img = loadImage(cursor.imgPath);
+}
+
+let div;
+let div2;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(60);
-  v2anim = 0;
-  keep = windowWidth;
-
-  // background("#dbdbdb");
-}
-let mode = "normal";
-
-let v1Anim = 0;
-let v2anim = 0;
-
-let p = true;
-let nn = 0;
-let t = 0;
-let keep;
-
-function draw() {
-  stroke("black");
-  strokeWeight(0.6);
-  let xpos = mode == "normal" ? (windowWidth / 12) * 3 : (windowWidth / 12) * 2;
-  // let xpos = 300
-  let ypos = 67;
-
-  // Anim arriba - abajo
-  // Vertical 1
-
-  line(xpos, 0, xpos, v1Anim);
-  v1Anim += 20;
-
-  // Vertical 2
-  line(
-    windowWidth - xpos,
-    windowHeight,
-    windowWidth - xpos,
-    windowHeight - v2anim
-  );
-  v2anim += 20;
-
-  // Horizontal 1
-  //line(0, ypos, windowWidth, ypos);
-
-  strokeWeight(1.2);
-
-  // 1
-  let ii = t + nn;
-  // 2
-  let iii = t + nn;
-  nn += 20; // separacion
-  t++;
-
-  line(windowWidth - ii, ypos, keep - ii + 10, ypos);
-
-  // Horizontal bottom
-  line(iii, windowHeight - ypos, iii + 10, windowHeight - ypos);
-
-  // // Horizontal 2
-  // line(0, windowHeight - ypos, windowWidth, windowHeight- ypos);
-  // Line lateral
-
-  if (mode == "normal") {
-    strokeWeight(0.6);
-    line(62, 90, 62, windowHeight - 90);
-  }
+  cursor.color = color(`rgba(${cursor.colorValue}, ${cursor.alpha})`);
+  // Create div
+  // myDiv.style("background-color", "red");
+  div = document.getElementById("interface-mouse-right-line");
+  div2 = document.getElementById("interface-mouse-top-line");
+  console.log(div.style);
 }
 
 // Ajustar medidas de la pantalla cuando se actualiza
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-
-  if (windowWidth < 768) {
-    mode = "small";
-  } else mode = "normal";
-
-  // background("#dbdbdb");
-  // Reset
-
-  v1Anim = 0;
-  v2anim = 0;
-  keep = windowWidth;
-
-  p = true;
-  nn = 0;
-  t = 0;
 }
 
-// line(xpos, 0, xpos, windowHeight);
+function draw() {
+  // Limpiar canvas
+  clear();
 
-// // Vertical 2
-// line(windowWidth - xpos, 0, windowWidth - xpos, windowHeight);
+  // Propiedades de la linea
+  stroke(cursor.color);
+  strokeWeight(cursor.weight);
 
-// // Horizontal 1
-// line(0, ypos, windowWidth, ypos);
+  // Izquierda
+  line(0, mouseY, mouseX, mouseY);
 
-// // Horizontal 2
-// line(0, windowHeight - ypos, windowWidth, windowHeight- ypos);
+  // Derecha
+  line(mouseX, mouseY, windowWidth, mouseY);
+
+  // Arriba
+  line(mouseX, mouseY, mouseX, 0);
+
+  div.style.height = windowHeight + "px";
+  div.style.left = mouseX + "px";
+
+  div2.style.width = windowWidth + "px";
+  div2.style.top = mouseY + "px";
+
+  // Abajo
+  line(mouseX, mouseY, mouseX, windowHeight);
+
+  imageMode(CENTER);
+
+  // Dibujar cursos
+  image(cursor.img, mouseX, mouseY);
+}

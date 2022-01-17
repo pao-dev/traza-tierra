@@ -11,6 +11,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/interface.css" />
     <link rel="stylesheet" href="css/project.css" />
 
     <!-- Font Awesome -->
@@ -38,15 +39,15 @@
     <!-- <script type="module" src="js/mainThree.js" defer></script> -->
 
     <!-- P5 -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script> -->
-    <!-- <script src="js/sketch.js" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="js/sketch.js" defer></script>
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <header>
-      <!-- Top -->
+      <!-- Interface Top -->
       <div class="absolute-wrapper">
         <div class="container-fluid interface-top">
           <div class="row">
@@ -78,9 +79,10 @@
               <span id="interface-top-language">EN ES</span>
             </div>
 
-            <div class="col-2 col-md-3 order-sm-last d-md-none text-center">
-              -
-            </div>
+            <!-- Last -->
+            <div
+              class="col-2 col-md-3 order-sm-last d-md-none text-center"
+            ></div>
           </div>
         </div>
       </div>
@@ -139,11 +141,34 @@
           </ul>
         </div>
       </div>
+      <!-- Interface right -->
+      <div class="interface-right d-none d-md-block">
+        <!-- Facebook -->
+        <a href="">
+          <img
+            src="assets/img/social/facebook.png"
+            alt=""
+            class="social-facebook"
+          />
+        </a>
+        <!-- Instagram -->
+        <a href="">
+          <img
+            src="assets/img/social/instagram.png"
+            alt=""
+            class="social-instagram"
+          />
+        </a>
+      </div>
     </header>
 
     <!-- interface Vertical lines -->
     <div class="interface-left-line d-none d-md-block"></div>
     <div class="interface-right-line d-none d-md-block"></div>
+
+    <!-- Interface mouse lines -->
+    <div class="d-none d-md-block" id="interface-mouse-right-line"></div>
+    <div class="d-none d-md-block" id="interface-mouse-top-line"></div>
 
     <!-- Content -->
 
@@ -201,10 +226,7 @@
             id="project-container"
           >
             <div class="row">
-              <div
-                class="col-3 d-none d-md-block"
-                style="position: relative; border: 1px solid red"
-              >
+              <div class="col-3 d-none d-md-block" style="position: relative">
                 <div id="project-author-vertical">Arq Irving Martin</div>
                 <!-- square -->
                 <div id="project-square">
@@ -212,11 +234,8 @@
                   <div class="" id="project-year-vertical">2020</div>
                 </div>
               </div>
-              <div class="col-12 col-md-6" style="border: 1px solid red">
-                <div
-                  class=""
-                  style="background-color: coral; position: relative"
-                >
+              <div class="col-12 col-md-6 section-portfolio-center">
+                <div class="" style="position: relative">
                   <span id="project-author" class="d-block d-md-none">
                     Arq Irving Martin
                   </span>
@@ -309,28 +328,47 @@
                           <label for="form_message" style="padding-bottom: 1rem"
                             >Mensaje</label
                           >
-                          <textarea
-                            id="form_message"
-                            name="message"
-                            class="form-control"
-                            placeholder=""
-                            rows="6"
-                            required="required"
-                            data-error="Please, leave us a message."
-                          ></textarea>
+                          <div class="" style="position: relative">
+                            <textarea
+                              id="form_message"
+                              name="message"
+                              class="form-control"
+                              placeholder=""
+                              rows="4"
+                              required="required"
+                              data-error="Please, leave us a message."
+                            ></textarea>
+                            <!-- button -->
+                            <input
+                              type="submit"
+                              class="btn btn-success btn-send"
+                              style="
+                                background-color: transparent;
+                                color: black;
+                                border: 1px solid;
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                              "
+                              value="Enviar"
+                            />
+                          </div>
+
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
-                      <div class="col-md-12">
-                        <input
-                          type="submit"
-                          class="btn btn-success btn-send"
-                          value="Enviar"
-                        />
-                      </div>
+                      <div class="col-md-12"></div>
                     </div>
                   </div>
                 </form>
+                <!-- maps -->
+                <div class="d-none d-md-block">
+                  <img
+                    src="assets/img/maps.png"
+                    alt=""
+                    style="width: 100%; padding-top: 1rem"
+                  />
+                </div>
               </div>
               <!-- lateral -->
 
@@ -341,18 +379,18 @@
                 <ul class="contact-list">
                   <li class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span style="padding-left: 1rem">
+                    <span style="padding-left: 0.2rem">
                       trazatierra@gmail.com</span
                     >
                   </li>
                   <li class="contact-item">
                     <i class="fas fa-phone-alt"></i>
-                    <span style="padding-left: 1rem">958 688 2727</span>
+                    <span style="padding-left: 0.2rem">958 688 2727</span>
                   </li>
                 </ul>
 
                 <!-- Direccion -->
-                <div style="position: relative; width: 100%; height: 100%">
+                <div style="position: relative; width: 100%; height: 90%">
                   <div id="contact-direction">
                     Guamuchil 206, H, 70987 Crucetita, Oax.
                   </div>
