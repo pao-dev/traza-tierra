@@ -16,10 +16,13 @@ $(".main-content .project").on("wheel", function (e) {
     if ($(this).next().length && $(this).next()[0].id != "project-casa-bahia") {
       var next = "#" + $(this).next().attr("id");
       document.querySelector(next).scrollIntoView({ behavior: "smooth" });
+      console.log("--", next);
       changeNav(next);
     }
   }
 });
+
+//
 
 $(window).resize(function () {
   document.getElementById(z).scrollIntoView({});
